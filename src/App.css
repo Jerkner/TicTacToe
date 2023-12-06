@@ -50,8 +50,6 @@ main {
 }
 
 .square {
-    cursor: pointer;
-
     aspect-ratio: 1 / 1;
     background-color: #ccc;
     text-align: center;
@@ -67,6 +65,7 @@ main {
 
 .hover:hover {
     background-color: #9b9b9b;
+    cursor: pointer;
 }
 
 .sign {
