@@ -1,5 +1,5 @@
 import React from "react"
-import X from "./assets/X.svg"
+import X from "dist/assets/X.svg"
 
 export default function WinnerX() {
     return (
