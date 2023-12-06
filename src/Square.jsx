@@ -5,7 +5,7 @@ import O from "/assets/O.svg"
 console.log(X, O)
 
 export default function Square({ sign, onClick, gameOn }) {
-    const convertedSign = sign === 1 ? X : sign === -1 ? O : "/assets/null.png"
+    const convertedSign = sign === 1 ? X : sign === -1 ? O : "./assets/null.png"
 
     const classList = gameOn && !sign ? "square hover" : "square"
 
