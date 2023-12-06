@@ -1,5 +1,5 @@
 import React from "react"
-import O from "./public/O.svg"
+import O from "./assets/O.svg"
 
 export default function WinnerX() {
     return (
