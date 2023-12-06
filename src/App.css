@@ -32,6 +32,7 @@ main {
     width: 300px;
     height: 300px;
     grid-gap: 5px;
+    position: relative;
 }
 
 .player {
@@ -100,4 +101,13 @@ main {
 
 .reset-btn:hover {
     background-color: #9b9b9b;
+}
+
+.winner-line {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: 95%;
+    height: 95%;
 }
