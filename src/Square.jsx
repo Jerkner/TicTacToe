@@ -2,8 +2,6 @@ import React from "react"
 import X from "/assets/X.svg"
 import O from "/assets/O.svg"
 
-console.log(X, O)
-
 export default function Square({ sign, onClick, gameOn }) {
     const convertedSign = sign === 1 ? X : sign === -1 ? O : "./assets/null.png"
 
