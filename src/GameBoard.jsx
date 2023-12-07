@@ -11,6 +11,13 @@ export default function GameBoard() {
     const [player, setPlayer] = useState(true)
     const [gameOn, setGameOn] = useState(true)
     const [winnerMessage, setWinnerMessage] = useState(null)
+    const [lineProperties, setLineProperties] = useState({
+        direction: null,
+        height: null,
+        width: null,
+        rotation: null,
+    })
+
     const [direction, setDirection] = useState(null)
     const [height, setHeight] = useState(null)
     const [width, setWidth] = useState(null)
@@ -37,6 +44,7 @@ export default function GameBoard() {
     }
 
     useEffect(() => {
+        // Vertical X
         if (markedArr[0] + markedArr[3] + markedArr[6] === 3) {
             setGameOn(false)
             setWinnerMessage(WinnerX)
@@ -52,6 +60,7 @@ export default function GameBoard() {
             setWinnerMessage(WinnerX)
             setDirection("Vertical")
             setWidth("13.5")
+            // Horizontal X
         } else if (markedArr[0] + markedArr[1] + markedArr[2] === 3) {
             setGameOn(false)
             setWinnerMessage(WinnerX)
@@ -67,6 +76,7 @@ export default function GameBoard() {
             setWinnerMessage(WinnerX)
             setDirection("Horizontal")
             setHeight("13.5")
+            // Diagonal X
         } else if (markedArr[0] + markedArr[4] + markedArr[8] === 3) {
             setGameOn(false)
             setWinnerMessage(WinnerX)
@@ -77,6 +87,7 @@ export default function GameBoard() {
             setWinnerMessage(WinnerX)
             setDirection("Diagonal")
             setRotation("135")
+            // Vertical O
         } else if (markedArr[0] + markedArr[3] + markedArr[6] === -3) {
             setGameOn(false)
             setWinnerMessage(WinnerO)
@@ -92,6 +103,7 @@ export default function GameBoard() {
             setWinnerMessage(WinnerO)
             setDirection("Vertical")
             setWidth("13.5")
+            // Horizontal O
         } else if (markedArr[0] + markedArr[1] + markedArr[2] === -3) {
             setGameOn(false)
             setWinnerMessage(WinnerO)
@@ -107,6 +119,7 @@ export default function GameBoard() {
             setWinnerMessage(WinnerO)
             setDirection("Horizontal")
             setHeight("13.5")
+            // Diagonal O
         } else if (markedArr[0] + markedArr[4] + markedArr[8] === -3) {
             setGameOn(false)
             setWinnerMessage(WinnerO)
@@ -117,6 +130,7 @@ export default function GameBoard() {
             setWinnerMessage(WinnerO)
             setDirection("Diagonal")
             setRotation("135")
+            // No winner
         } else if (markedArr.every((element) => element !== null)) {
             setGameOn(false)
             setWinnerMessage(WinnerNone)
@@ -130,6 +144,10 @@ export default function GameBoard() {
         setMarkedArr([null, null, null, null, null, null, null, null, null])
         setGameOn(true)
         setWinnerMessage("")
+        setDirection(null)
+        setRotation(null)
+        setHeight(null)
+        setWidth(null)
     }
 
     let gameHtml = markedArr.map((sign, index) => {
